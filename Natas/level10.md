@@ -1,7 +1,9 @@
-# Natas Level 3 -> 4
+# Natas Level 10 -> 11
 
-**URL:** http://natas3.natas.labs.overthewire.org/
+**URL:** http://natas10.natas.labs.overthewire.org/
+**Password:** 1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg
 
 ## Solution
 
-I found this one to be tricky too. The comment said that not even Google can find that information. After tinkering around with the inspection, I thought that comment had to mean something, so I researched how Google finds websites and if there’s any way to hide the website from Google. So I found this thing called robots.txt (https://developers.google.com/search/docs/crawling-indexing/robots/intro ), which tells others using Google not to look in this location. some might think this is a great way to hide stuff, but the docs themselves say that it's really not since someone like me can find it pretty easily. So I just added an additional path http://natas3.natas.labs.overthewire.org/robots.txt/, that shows me the secret word, so I naturally guess that I can put that in the path, which ends up taking me to the password website. 
+ Applied knowledge from comp2041, such as the usage of grep to find the correct pattern to find the password for the next level. So, for this level, it was pretty similar to the previous level, but now there’s sanitization so that I can’t do the same shell injection. Based on the source code, that’s how they were sanitizing if(preg_match('/[;|&]/',$key)). For this level I think my experience with comp2041 helped slightly because I had an understanding how grep works. In this line grep -i $key dictionary.txt, we can substitue $key with any character and it will output anything matchign that character. Additionally, its important to specifiy where to look since like previous levels passwords are located in this path /etc/natas_webpass/natasx, I was just doing trial and error “a  /etc/natas_webpass/natas11”, “b  /etc/natas_webpass/natas11” and luckily when I tried this with it matched it with the password and showed it as output
+
