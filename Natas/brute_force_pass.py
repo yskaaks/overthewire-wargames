@@ -19,4 +19,4 @@ for i in range(0,32):
         if 'exists' in r.text :
             passwd = passwd + char
             print(passwd)
-            Break
+            break
